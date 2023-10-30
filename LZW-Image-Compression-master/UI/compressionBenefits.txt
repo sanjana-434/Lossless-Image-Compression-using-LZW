@@ -1,0 +1,3 @@
+Length of encoded Stream : 5,598,464
+Length of Original Stream : 775,896,576
+Compression Benefit : 770,298,112
