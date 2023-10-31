@@ -4,6 +4,8 @@ import time
 from LZW import LZW
 from PIL import Image
 
+
+
 st.set_page_config(page_title='img compression', layout="wide")
 
 st.title('Image Compression using LZW')
@@ -31,34 +33,36 @@ with st.subheader('Upload Image'):
     upload_dir = "LZW-Image-Compression-master/LZW-Image-Compression-master/Images/"
     if uploaded_image is not None:
         image1 = Image.open(uploaded_image)
-        image1.save("D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image.jpg")
+        image1.save("D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image.jpg")
 
-        jpeg_image = Image.open("D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image.jpg")
-        tiff_path = "D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image_tif.tif"
+        jpeg_image = Image.open("D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image.jpg")
+        tiff_path = "D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image_tif.tif"
         jpeg_image.save(tiff_path,"TIFF")
 
 # compressor = LZW(os.path.join("../Images","small.tif"))
-compressor = LZW("D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image_tif.tif")
+compressor = LZW("D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image_tif.tif")
 compressor.compress()
 
-decompressor = LZW("D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/CompressedFiles/image_tifCompressed.lzw")
+decompressor = LZW("D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/CompressedFiles/image_tifCompressed.lzw")
 decompressor.decompress()
 
 # Display the uploaded image
 st.markdown('---')
 st.subheader('Original Image')
-image1 = Image.open("D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image.jpg")
+image1 = Image.open("D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/Images/image.jpg")
 st.image(image1, caption='Uploaded Image', use_column_width=True)
 
 st.markdown("---")
 st.subheader('Decompressed Image')
-image2  = Image.open("D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/DecompressedFiles/image_tifDecompressed.tif")
+image2  = Image.open("D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/DecompressedFiles/image_tifDecompressed.tif")
 st.image(image2, caption='Decompressed Image', use_column_width=True)
 
 st.markdown("---")
 st.subheader('Compression Benefits')
-file_path = "D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/compressionBenefits.txt"
+file_path = "D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/compressionBenefits.txt"
 with open(file_path, "r") as file:
     for line in file:
         st.write(line)
+
+
 

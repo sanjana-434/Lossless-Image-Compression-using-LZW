@@ -32,7 +32,7 @@ class LZW:
         print("Length of Original Stream: ",origialStreamLen)
         print("Compression Benefit: ",origialStreamLen - encodedStreamLen)
 
-        file_path = "D:/Lab_Main/Sem_5/Data Compression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/compressionBenefits.txt"
+        file_path = "D:/Lab_Main/Sem_5/DataCompression/package/LZW-Image-Compression-master/LZW-Image-Compression-master/UI/compressionBenefits.txt"
         # Write data to the text file
         with open(file_path, "w") as file:
             file.write("Length of encoded Stream : "+str('{:,}'.format(encodedStreamLen)))
